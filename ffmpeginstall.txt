@@ -1,4 +1,5 @@
 sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get -y install autoconf automake build-essential libass-dev libfreetype6-dev libgpac-dev \
   libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev \
   libxext-dev libxfixes-dev pkg-config texi2html zlib1g-dev
@@ -12,7 +13,6 @@ PATH="$PATH:$HOME/bin" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME
 PATH="$PATH:$HOME/bin" make
 make install
 make distclean
-
 cd ~/ffmpeg_sources
 wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 tar xjvf ffmpeg-snapshot.tar.bz2
@@ -29,7 +29,5 @@ PATH="$PATH:$HOME/bin" make
 make install
 make distclean
 hash -r
-
-//add ffmpeg as a command to bash
 echo "MANPATH_MAP $HOME/bin $HOME/ffmpeg_build/share/man" >> ~/.manpath
 . ~/.profile
